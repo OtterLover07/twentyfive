@@ -1,18 +1,17 @@
 body {
     margin: 0px;
     display: grid;
-    grid-template-rows: minmax(150px, 65vh) auto 150vh 200px;
+    grid-template-rows: minmax(150px, 65vh) auto auto auto;
     grid-template-areas: 
     'header'
     'nav'
     'main'
     'footer'
     ;
+    color: #1a1a1a;
 }
 
 header {
-    /* min-height: 150px;
-    height: 65vh; */
     justify-items: center;
     background-image: url("../img/temp.jpeg");
     background-size: cover;
@@ -31,38 +30,79 @@ nav {
     top: 0;
     background-color: darkgoldenrod;
     padding: 10px;
+    padding-bottom: 0px;
     display: flex;
     flex-wrap: wrap;
+    overflow-y: hidden;
+    transition: height 2s;
 }
-nav > a {
+nav a {
     margin-left: auto;
     margin-right: auto;
+    font-size: 120%;
 }
 .menu-button {
     position: absolute;
-    top: 7px;
+    top: auto;
+    bottom: auto;
 }
 .menu {
     width: 100%;
-    height: auto;
-    margin-top: 5px;
+    height: 22px;
+    margin: 10px 5px;
     display: flex;
+    transition: 0.25s ease-in;
     justify-content: space-around;
-    transition: 1s;
+    
 }
 .hide {
     height: 0px;
-    font-size: 0px;
+    margin-bottom: 0px;
 }
+
 main {
     grid-area: "main";
-    /* height: 150vh; */
-    background-color:seagreen;
+    background-color:darkcyan;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+article {
+    background-color:rgba(46, 139, 87, 70%);
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: ghostwhite;
 }
 
 footer {
     grid-area: "footer";
     background-color: lightseagreen;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-items: stretch;
+    padding: 5px 10px 75px;
+    color: #666666;
+    font-size: 80%;
+}
+footer p {
+    margin: 0px;
+}
+
+.rightbox {
+    justify-items: start;
+}
+.leftbox {
+    justify-items: end;
 }
 
 .recruitButton {
